@@ -301,3 +301,39 @@ for key,val in my_dict.items():
     if val > n//2:
         print(key)
 
+# 30. product of array except itself
+
+arr = [1,2,3,4]
+
+n = len(arr)
+skip = 0
+pro = 1
+product = []
+count = 0
+
+while count < n:
+    temp = 0
+    while temp < n:
+        if temp == skip:
+            temp += 1
+        else:
+            pro *= arr[temp]
+            temp += 1
+    product.append(pro)
+    pro = 1
+    skip += 1
+    count += 1
+print(product)
+
+# 32. maximum product of two element
+
+arr = [1,2,3,4]
+
+arr.sort()
+
+max_product = max(
+    arr[-1]*arr[-2],arr[0]*arr[1]
+)
+
+print(max_product)
+
